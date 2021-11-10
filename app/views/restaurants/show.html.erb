@@ -1,0 +1,29 @@
+<div class="container">
+  <h2>
+    <%= @restaurant.name %>
+  </h2>
+
+  <h3>
+    Where? 📍 <%= @restaurant.address %>
+  </h3>
+
+  <h3>
+    Category? 🌍 <%= @restaurant.category %>
+  </h3>
+
+  <%= link_to 'Back to all restaurants', restaurants_path, class:"btn btn-primary" %>
+
+  <h3> What do our customers think? Here are <%= @restaurant.name %>'s reviews 🕵🏻‍♂️</h3>
+
+  <%= link_to 'Leave a Review', new_restaurant_review_path(@restaurant), class:"btn btn-primary" %>
+
+  <ul>
+    <% @restaurant.reviews.each do |review| %>
+      <li>
+        <h3>Rating <%= review.rating %></h3>
+        <p><%= review.content %></p>
+      </li>
+    <% end %>
+  </ul>
+
+</div>

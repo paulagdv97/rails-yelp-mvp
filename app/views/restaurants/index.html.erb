@@ -1,0 +1,22 @@
+<h1>Here are our restaurants 🍽</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Category</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @restaurants.each do |restaurant| %>
+      <tr>
+        <td><%= restaurant.name %></td>
+        <td><%= restaurant.category %></td>
+        <td><%= link_to 'See more ➡️', restaurant %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'New Restaurant', new_restaurant_path, class:"btn btn-primary" %>
